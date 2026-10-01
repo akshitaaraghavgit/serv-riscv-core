@@ -28,7 +28,7 @@ Loads/stores: lw, sw, lb, sb, etc.
 
 Branches: beq, bne, blt, bge
 
-Jumps: jal, jalr
+Jumps: jal(Jump and link), jalr(Jump and link register)
 
 Upper immediate: lui, auipc
 - Here, we can see that RV32I can't do multiplication and division
@@ -41,12 +41,12 @@ Upper immediate: lui, auipc
 - Needs: two source registers, one destination register, an operation code
 2. I-type (Immediate) — for ops with a constant baked into the instruction, like addi, loads (lw), and jalr
 - Needs: one source register, one destination register, a 12-bit immediate constant
-3. S-type (Store) — for stores like sw, sb
+3. S-type (Store) — for stores like sw( Store word), sb(Store byte)
 
 Needs: two source registers (base address + value to store) and an immediate offset
 Notably has no destination register — stores don't write back to a register, they write to memory
 
-4. B-type (Branch) — for conditional branches like beq, bne, blt
+4. B-type (Branch) — for conditional branches like beq(Branch if equal), bne(Branch if not equal), blt
 
 Needs: two source registers to compare, and an immediate offset (the branch target)
 Also has no destination register — branches don't produce a value, they just redirect the PC
